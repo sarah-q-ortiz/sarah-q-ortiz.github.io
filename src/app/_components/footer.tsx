@@ -1,26 +1,29 @@
 import Container from "@/app/_components/container";
-import { EXAMPLE_PATH } from "@/lib/constants";
-
+import { gitURL, linkedInURL } from "@/lib/constants";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquareLinkedin, faSquareGithub } from '@fortawesome/free-brands-svg-icons'
+import {EnvelopeIcon} from '@heroicons/react/24/solid'
 export function Footer() {
   return (
     <footer className="bg-neutral-50 border-t border-neutral-200 dark:bg-slate-800">
       <Container>
         <div className="py-28 flex flex-col lg:flex-row items-center">
           <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
+            Sarah Q. Ortiz
           </h3>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
+            
+            <a href={linkedInURL}>
+              <FontAwesomeIcon icon={faSquareLinkedin} size="xl" />
             </a>
             <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
+              href={gitURL}
+              className="mx-3 font-bold"
             >
-              View on GitHub
+              <FontAwesomeIcon icon={faSquareGithub} size="xl"/>
+            </a>
+            <a href="mailto:sarahqortiz@gmail.com">
+              <EnvelopeIcon className="w-6 h-6 mx-3" />
             </a>
           </div>
         </div>
